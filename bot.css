@@ -16,6 +16,7 @@ body {
 .header {
     /* overflow: hidden; */
     background-color: #2C3E50;
+    z-index:1;
     /* Black background color */
     /* padding: 5px 10px; */
 }
@@ -162,6 +163,7 @@ img {
     width: 50vw;
     height: 50vh;
     align-items: center;
+    z-index: -1;
     margin: 5% 5%;
     border-radius: 25px;
     /* justify-content: center; */
@@ -190,6 +192,7 @@ img {
     border: 2px solid #2C3E50;
     background: #eaeaea;
     overflow: hidden;
+    z-index: -1;
     box-sizing: border-box;
     align-items: center;
     margin: 5% 5%;
