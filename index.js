@@ -1,12 +1,12 @@
-const hamburger=document.querySelector(".hamburger");
-const headerRight=document.querySelector(".header-right");
+const hamburger = document.querySelector(".hamburger");
+const headerRight = document.querySelector(".header-right");
 
 hamburger.addEventListener("click", () => {
     hamburger.classList.toggle("active");
     headerRight.classList.toggle("active");
 })
 
-document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", ()=> {
+document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
     hamburger.classList.remove("active");
     headerRight.classList.remove("active");
 }))
@@ -27,9 +27,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
         "webhookId": "d01e4edf-23dc-49db-9276-abae697088f4",
         "lazySocket": true,
         "showBotInfoPage": true,
-        
+
         "themeName": "prism",
         "frontendVersion": "v1",
+        "avatarUrl": "https://play-lh.googleusercontent.com/XMWHlx11Yfd7q1624ic0BBMgB8cJ-c3usY_p3ZneMGUBJZagK-uoeyfXmXeOeuA0b3c",
+        "phoneNumber": "1800 2335 5666",
+        "privacyPolicy": "https://ioagpl.com/privacy-policy/",
+        "emailAddress": "info@ioagpl.com",
+        "website": "https://ioagpl.com/",
         // "showPoweredBy": true,
         "className": "webchatIframe",
         // 'className': 'webchatIframe',
@@ -39,7 +44,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         'enableConversationDeletion': true,
         // 'disableAnimations': true,
         'closeOnEscape': false,
-        'stylesheet':'https://webchat-styler-css.botpress.app/prod/8f53671c-adcd-44d3-aa55-487886a67118/v73747/style.css',
+        'stylesheet': 'https://webchat-styler-css.botpress.app/prod/code/8f53671c-adcd-44d3-aa55-487886a67118/v68816/style.css',
         'showConversationsButton': false,
         'enableTranscriptDownload': true,
         'showCloseButton': true,
@@ -48,27 +53,27 @@ document.addEventListener('DOMContentLoaded', (event) => {
         "useSessionStorage": true,
         "theme": "eggplant",
         "themeColor": "#2563eb",
-        "enablePersistHistory":true,
+        "enablePersistHistory": true,
         "allowedOrigins": []
     });
 
     let ttsLang;
-    var main=document.querySelector(".main");
-    var secondary=document.querySelector(".scrollable-div");
-    main.style.display="none";
-    secondary.style.display="flex";
+    var main = document.querySelector(".main");
+    var secondary = document.querySelector(".scrollable-div");
+    main.style.display = "none";
+    secondary.style.display = "flex";
 
     window.botpressWebChat.onEvent(event => {
 
         if (event.type === 'TRIGGER' && event.value.ttsLang) {
-            main.style.display="flex";
-            secondary.style.display="none";
+            main.style.display = "flex";
+            secondary.style.display = "none";
             ttsLang = event.value.ttsLang;
             console.log("Language: " + event.value.ttsLang);
         }
         else if (event.type === 'TRIGGER' && event.value.botResponse) {
-            main.style.display="flex";
-            secondary.style.display="none";
+            main.style.display = "flex";
+            secondary.style.display = "none";
             // main.style.display='block';
             let currentContent = transcriptionResult.innerHTML;
             transcriptionResult.innerHTML = currentContent + '<p>Bot: ' + event.value.botResponse + '</p>';
@@ -79,8 +84,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
             speech.text = event.value.botResponse;
             window.speechSynthesis.speak(speech);
         }
-        else { 
-            console.log("Something wrong :( ") }
+        else {
+            console.log("Something wrong :( ")
+        }
     }, ['TRIGGER']);
 
     const startButton = document.getElementById("startButton");
@@ -129,7 +135,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 }
 
             }
-            transcriptionResult.innerHTML = '<h2>Transcription Result:</h2><p> User :'  + transcript + interimTranscript + '</p>';
+            transcriptionResult.innerHTML = '<h2>Transcription Result:</h2><p> User :' + transcript + interimTranscript + '</p>';
         };
     }
     else {
@@ -156,12 +162,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
 let next = document.querySelector('.next')
 let prev = document.querySelector('.prev')
 
-next.addEventListener('click', function(){
+next.addEventListener('click', function () {
     let items = document.querySelectorAll('.item')
     document.querySelector('.slide').appendChild(items[0])
 })
 
-prev.addEventListener('click', function(){
+prev.addEventListener('click', function () {
     let items = document.querySelectorAll('.item')
     document.querySelector('.slide').prepend(items[items.length - 1]) // here the length of items = 6
 })
