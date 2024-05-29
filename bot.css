@@ -184,7 +184,7 @@ img {
 
 
 .scrollable-div {
-    position: relative;
+    position: fixed;
     width: 50vw;
     height: 70vh;
     overflow-y: hidden;
